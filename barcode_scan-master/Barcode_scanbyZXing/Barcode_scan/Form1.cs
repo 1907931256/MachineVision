@@ -13,8 +13,13 @@ using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
 
+
+/// <summary>
+/// 条形码读取
+/// </summary>
 namespace Barcode_scan
 {
+
     public partial class Form1 : Form
     {
         public Form1()
