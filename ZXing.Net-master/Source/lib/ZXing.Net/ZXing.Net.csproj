@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>0.16.2</VersionPrefix>
+    <TargetFrameworks>netstandard1.0;netstandard1.1;netstandard1.3</TargetFrameworks>
+    <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
+    <PlatformTarget>anycpu</PlatformTarget>
+    <PublicSign>true</PublicSign>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>zxing</AssemblyName>
+    <AssemblyOriginatorKeyFile>../../../Key/private.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PackageId>ZXing.Net</PackageId>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="..\client\result\optional\**\*;..\common\BigInteger\**\*;..\common\BitMatrix.Drawing.cs;..\common\BitMatrix.Silverlight.cs" />
+    <Compile Include="..\net2.0\Action.cs;..\net2.0\Func.cs;..\Properties\AssemblyInfo.cs;..\renderer\IBarcodeRenderer.cs;..\renderer\PixelData.cs;..\renderer\PixelDataRenderer.cs;..\renderer\SVGRenderer.cs;..\silverlight\BrowsableAttribute.cs;..\silverlight\NonSerializedAttribute.cs;..\silverlight\SerializableAttribute.cs;..\BarcodeFormat.cs;..\BarcodeReader.ByteArray.cs;..\BarcodeReaderCustom.cs;..\BarcodeReaderGeneric.cs;..\BarcodeWriter.PixelData.cs;..\BarcodeWriter.SvgImage.cs;..\BarcodeWriterCustom.cs;..\BarcodeWriterGeneric.cs;..\BaseLuminanceSource.cs;..\Binarizer.cs;..\BinaryBitmap.cs;..\DecodeHintType.cs;..\Dimension.cs;..\EncodeHintType.cs;..\FormatException.cs;..\IBarcodeReader.cs;..\IBarcodeReader.Multiple.cs;..\IBarcodeReaderCustom.cs;..\IBarcodeReaderCustom.Multiple.cs;..\IBarcodeReaderGeneric.cs;..\IBarcodeReaderGeneric.Multiple.cs;..\IBarcodeWriter.cs;..\IBarcodeWriter.PixelData.cs;..\IBarcodeWriter.SvgImage.cs;..\IBarcodeWriterCustom.cs;..\IBarcodeWriterGeneric.cs;..\InvertedLuminanceSource.cs;..\LuminanceSource.cs;..\MultiFormatReader.cs;..\MultiFormatWriter.cs;..\PlanarYUVLuminanceSource.cs;..\Reader.cs;..\ReaderException.cs;..\Result.cs;..\ResultMetadataType.cs;..\ResultPoint.cs;..\ResultPointCallback.cs;..\RGBLuminanceSource.cs;..\SupportClass.cs;..\Writer.cs;..\WriterException.cs" Exclude="..\common\BitMatrix.Drawing.cs;..\common\BitMatrix.Silverlight.cs" />
+    <Compile Include="..\aztec\**;..\client\**;..\common\**;..\datamatrix\**;..\imb\**;..\maxicode\**;..\multi\**;..\oned\**;..\pdf417\**;..\qrcode\**" Exclude="..\client\result\optional\**\*;..\common\BigInteger\**\*;bin\**;obj\**;**\*.xproj;packages\**;..\common\BitMatrix.Drawing.cs;..\common\BitMatrix.Silverlight.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+    <Compile Remove="..\client\result\optional\**\*;..\common\BitMatrix.Drawing.cs;..\common\BitMatrix.Silverlight.cs" />
+  </ItemGroup>
+
+</Project>

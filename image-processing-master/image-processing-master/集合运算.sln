@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "集合运算", "集合运算\集合运算.csproj", "{19C9ADE6-FBC5-4278-9B27-8452A7C13316}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19C9ADE6-FBC5-4278-9B27-8452A7C13316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C9ADE6-FBC5-4278-9B27-8452A7C13316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C9ADE6-FBC5-4278-9B27-8452A7C13316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C9ADE6-FBC5-4278-9B27-8452A7C13316}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

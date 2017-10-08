@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>0.16.4-beta</version>
+    <authors>Michael Jahn</authors>
+    <owners>Michael Jahn</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/micjahn/ZXing.Net/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/micjahn/ZXing.Net/master/Icons/logo.jpg</iconUrl>
+    <id>ZXing.Net.Bindings.ImageSharp</id>
+    <title>ZXing.Net.Bindings.ImageSharp</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ZXing.Net Bindings for ImageSharp - use ImageSharp with ZXing.Net for barcode reading</description>
+    <summary>ZXing.Net Bindings for SixLabors.ImageSharp</summary>
+    <releaseNotes></releaseNotes>
+    <tags>ZXing ImageSharp</tags>
+    <dependencies>
+      <group targetFramework="netstandard1.1">
+        <dependency id="ZXing.Net" version="0.16.2.0" exclude="Build,Analyzers" />
+        <dependency id="SixLabors.ImageSharp" version="1.0.0-beta0001" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="netstandard1.3">
+        <dependency id="ZXing.Net" version="0.16.2.0" exclude="Build,Analyzers" />
+        <dependency id="SixLabors.ImageSharp" version="1.0.0-beta0001" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\netstandard1.1\zxing.imagesharp.dll" target="lib\netstandard1.1\zxing.imagesharp.dll" />
+    <file src="bin\Release\netstandard1.1\zxing.imagesharp.pdb" target="lib\netstandard1.1\zxing.imagesharp.pdb" />
+    <file src="bin\Release\netstandard1.1\zxing.imagesharp.xml" target="lib\netstandard1.1\zxing.imagesharp.xml" />
+    <file src="bin\Release\netstandard1.3\zxing.imagesharp.dll" target="lib\netstandard1.3\zxing.imagesharp.dll" />
+    <file src="bin\Release\netstandard1.3\zxing.imagesharp.pdb" target="lib\netstandard1.3\zxing.imagesharp.pdb" />
+    <file src="bin\Release\netstandard1.3\zxing.imagesharp.xml" target="lib\netstandard1.3\zxing.imagesharp.xml" />
+  </files>
+</package>
