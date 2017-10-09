@@ -2,7 +2,7 @@
 // AForge.NET framework
 // http://www.aforgenet.com/framework/
 //
-// Copyright © AForge.NET, 2005-2012
+// Copyright ?AForge.NET, 2005-2012
 // contacts@aforgenet.com
 //
 
@@ -167,11 +167,17 @@ namespace AForge.Imaging
         }
 
         /// <summary>
-        /// Specifies if blobs should be filtered.
+        /// Ö¸¶¨ÊÇ·ñÒª¹ıÂË°ßµã
+        /// Èç¹ûÊôĞÔµÈÓÚfalse,ÄÇÃ´ÕâÕÅÕÕÆ¬Ã»ÓĞĞèÒª´¦ÀíµÄ
+        /// Ä¬ÈÏÖµÊÇfalse
         /// </summary>
+        /// Specifies if blobs should be filtered.
+        /// 
+        /// 
         /// 
         /// <remarks><para>If the property is equal to <b>false</b>, then there is no any additional
-        /// post processing after image was processed. If the property is set to <b>true</b>, then
+        /// post processing after image was processed.
+        /// If the property is set to <b>true</b>, then
         /// blobs filtering is done right after image processing routine. If <see cref="BlobsFilter"/>
         /// is set, then custom blobs' filtering is done, which is implemented by user. Otherwise
         /// blobs are filtered according to dimensions specified in <see cref="MinWidth"/>,
@@ -186,6 +192,7 @@ namespace AForge.Imaging
         }
 
         /// <summary>
+        /// Ö¸¶¨´óĞ¡¹ıÂËÓ¦¼ÓÉÏ ÉÏÏÂÎÄ
         /// Specifies if size filetering should be coupled or not.
         /// </summary>
         /// 
@@ -224,6 +231,7 @@ namespace AForge.Imaging
         }
 
         /// <summary>
+        /// °ßµãÔÊĞíµÄ×îĞ¡¸ß¶È
         /// Minimum allowed height of blob.
         /// </summary>
         /// 
@@ -242,6 +250,7 @@ namespace AForge.Imaging
         }
 
         /// <summary>
+        /// °ßµãÔÊĞíµÄ×îĞ¡¿í¶È
         /// Maximum allowed width of blob.
         /// </summary>
         /// 
@@ -349,9 +358,9 @@ namespace AForge.Imaging
         }
 
         /// <summary>
-        /// Build objects map.
+        /// ¹¹½¨Ò»¸öÍ¼Ïñ
+        /// ´¦ÀíÍ¼Ïñ²¢¹¹½¨¶ÔÏóÓ³Éä£¬ºóÀ´ÓÃÓÚÌáÈ¡Blob
         /// </summary>
-        /// 
         /// <param name="image">Source binary image.</param>
         /// 
         /// <remarks><para>Processes the image and builds objects map, which is used later to extracts blobs.</para></remarks>
@@ -360,7 +369,7 @@ namespace AForge.Imaging
         /// 
         public void ProcessImage( Bitmap image )
         {
-            // lock source bitmap data
+            // lock source bitmap data ËøÔ­Î»Í¼Êı¾İ
             BitmapData imageData = image.LockBits(
                 new Rectangle( 0, 0, image.Width, image.Height ),
                 ImageLockMode.ReadOnly, image.PixelFormat );
@@ -372,13 +381,13 @@ namespace AForge.Imaging
             }
             finally
             {
-                // unlock source image
+                // unlock source image ½âËøÔ­Î»Í¼
                 image.UnlockBits( imageData );
             }
         }
 
         /// <summary>
-        /// Build objects map.
+        /// Build objects map. ¹¹½¨¶ÔÏóÓ³Éä
         /// </summary>
         /// 
         /// <param name="imageData">Source binary image data.</param>

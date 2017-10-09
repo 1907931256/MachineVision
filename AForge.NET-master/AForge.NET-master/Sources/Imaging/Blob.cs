@@ -2,7 +2,7 @@
 // AForge.NET framework
 // http://www.aforgenet.com/framework/
 //
-// Copyright © AForge.NET, 2005-2012
+// Copyright ?AForge.NET, 2005-2012
 // contacts@aforgenet.com
 //
 
@@ -15,17 +15,18 @@ namespace AForge.Imaging
     using AForge;
 
     /// <summary>
-    /// Image's blob.
+    /// Í¼ÏñµÄ°ßµã
+    /// ¸ÃÀà´ú±íÒ»¸ö°ßµã¡£±íÊ¾Ò»¸öÍ¼ÏñµÄÒ»²¿·Ö
+    /// ¸ÃÀà·â×°ÁËBlob±¾ÉíÒÔ¼°ÆäÔÚ¸¸Ó³ÏñÖĞµÄÎ»ÖÃĞÅÏ¢
+    /// ¸ÃÀà²»¶ÔblobµÄÍ¼Ïñ´¦Àí¸ºÔğ£¬ËùÒÔÓ¦¸ÃÊÇ ĞèÒªÊ±ÊÖ¶¯Íê³É
     /// </summary>
     /// 
-    /// <remarks><para>The class represents a blob - part of another images. The
-    /// class encapsulates the blob itself and information about its position
-    /// in parent image.</para>
-    /// 
-    /// <para><note>The class is not responsible for blob's image disposing, so it should be
-    /// done manually when it is required.</note></para>
-    /// </remarks>
-    /// 
+    /// The class represents a blob - part of another images.
+    /// ¸ÃÀà´ú±íÒ»¸ö°ßµã¡£±íÊ¾Ò»¸öÍ¼ÏñµÄÒ»²¿·Ö
+    /// The class encapsulates the blob itself and information about its position in parent image.
+    /// ¸ÃÀà·â×°ÁËBlob±¾ÉíÒÔ¼°ÆäÔÚ¸¸Ó³ÏñÖĞµÄÎ»ÖÃĞÅÏ¢
+    /// The class is not responsible for blob's image disposing, so it should be done manually when it is required.
+    /// ¸ÃÀà²»¶ÔblobµÄÍ¼Ïñ´¦Àí¸ºÔğ£¬ËùÒÔÓ¦¸ÃÊÇ ĞèÒªÊ±ÊÖ¶¯Íê³É
     public class Blob
     {
         // blob's image
@@ -56,7 +57,7 @@ namespace AForge.Imaging
         /// the image may be extracted using <see cref="BlobCounterBase.ExtractBlobsImage( Bitmap, Blob, bool )"/>
         /// or <see cref="BlobCounterBase.ExtractBlobsImage( UnmanagedImage, Blob, bool )"/> method.</para></remarks>
         ///
-        [Browsable( false )]
+        [Browsable(false)]
         public UnmanagedImage Image
         {
             get { return image; }
@@ -72,7 +73,7 @@ namespace AForge.Imaging
         /// size of original image. If the property is set to <see langword="false"/>, the blob's
         /// image size equals to size of actual blob.</para></remarks>
         /// 
-        [Browsable( false )]
+        [Browsable(false)]
         public bool OriginalSize
         {
             get { return originalSize; }
@@ -94,7 +95,7 @@ namespace AForge.Imaging
         /// <summary>
         /// Blob's ID in the original image.
         /// </summary>
-        [Browsable( false )]
+        [Browsable(false)]
         public int ID
         {
             get { return id; }
@@ -179,9 +180,9 @@ namespace AForge.Imaging
         /// image may be extracted later using <see cref="BlobCounterBase.ExtractBlobsImage( Bitmap, Blob, bool )"/>
         /// or <see cref="BlobCounterBase.ExtractBlobsImage( UnmanagedImage, Blob, bool )"/> method.</para></remarks>
         /// 
-        public Blob( int id, Rectangle rect )
+        public Blob(int id, Rectangle rect)
         {
-            this.id   = id;
+            this.id = id;
             this.rect = rect;
         }
 
@@ -195,12 +196,12 @@ namespace AForge.Imaging
         /// image may be extracted later using <see cref="BlobCounterBase.ExtractBlobsImage( Bitmap, Blob, bool )"/>
         /// or <see cref="BlobCounterBase.ExtractBlobsImage( UnmanagedImage, Blob, bool )"/> method.</para></remarks>
         /// 
-        public Blob( Blob source )
+        public Blob(Blob source)
         {
             // copy everything except image
-            id   = source.id;
+            id = source.id;
             rect = source.rect;
-            cog  = source.cog;
+            cog = source.cog;
             area = source.area;
             fullness = source.fullness;
             colorMean = source.colorMean;

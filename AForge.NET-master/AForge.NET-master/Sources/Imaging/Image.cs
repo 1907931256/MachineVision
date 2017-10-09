@@ -2,7 +2,7 @@
 // AForge.NET framework
 // http://www.aforgenet.com/framework/
 //
-// Copyright © AForge.NET, 2005-2011
+// Copyright ?AForge.NET, 2005-2011
 // contacts@aforgenet.com
 //
 
@@ -115,9 +115,10 @@ namespace AForge.Imaging
         }
 
         /// <summary>
+        /// Í¼Æ¬¿ËÂ¡
         /// Clone image.
+        /// ·µ»Ø¾ßÓÐÖ¸¶¨ÏñËØ¸ñÊ½µÄÔ´Í¼ÏñµÄ¿ËÂ¡
         /// </summary>
-        /// 
         /// <param name="source">Source image.</param>
         /// <param name="format">Pixel format of result image.</param>
         /// 

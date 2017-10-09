@@ -15,6 +15,7 @@ namespace AForge.Robotics.TeRK
 
     /// <summary>
     /// Manipulation of Qwerk robotics board.
+    /// 操纵了机器人技术委员会。
     /// </summary>
     /// 
     /// <remarks>

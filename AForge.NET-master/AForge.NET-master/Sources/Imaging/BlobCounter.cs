@@ -2,7 +2,7 @@
 // AForge.NET framework
 // http://www.aforgenet.com/framework/
 //
-// Copyright © AForge.NET, 2005-2012
+// Copyright ?AForge.NET, 2005-2012
 // contacts@aforgenet.com
 //
 
@@ -13,58 +13,63 @@ namespace AForge.Imaging
     using System.Drawing.Imaging;
 
     /// <summary>
-    /// Blob counter - counts objects in image, which are separated by black background.
+    /// °ßµã¼ÆÊı  °ßµã¼ÆÊıÊÇ°Ñ¸÷¸öĞÎ×´´Ó±³¾°ºÚÉ«ÖĞ·ÖÀë³öÀ´
+    /// 
     /// </summary>
+    /// Blob counter - counts objects in image, which are separated by black background.
+    /// °ßµã¼ÆÊı  °ßµã¼ÆÊıÊÇ°Ñ¸÷¸öĞÎ×´´Ó±³¾°ºÚÉ«ÖĞ·ÖÀë³öÀ´
     /// 
-    /// <remarks><para>The class counts and extracts stand alone objects in
-    /// images using connected components labeling algorithm.</para>
+    /// The class counts and extracts stand alone objects in images using connected components labeling algorithm.
+    /// ÀàÊÇ°ßµã¼ÆÊıÊÇÀûÓÃ  Á¬Í¨ÇøÓò±ê¼ÇËã·¨
     /// 
-    /// <para><note>The algorithm treats all pixels with values less or equal to <see cref="BackgroundThreshold"/>
-    /// as background, but pixels with higher values are treated as objects' pixels.</note></para>
     /// 
-    /// <para>For blobs' searching the class supports 8 bpp indexed grayscale images and
+    /// ¸ÃËã·¨ÊÇ½«ËùÓĞĞ¡ÓÚ»òµÈÓÚ±³¾°ÏñËØµÄµãµ±×ö±³¾°´¦Àí£¬¸ßÓÚ±³¾°É«µÄµ±×ö´¦Àíµã¡£
+    /// The algorithm treats all pixels with values less or equal to as background, but pixels with higher values are treated as objects' pixels.
+    /// 
+    /// 
+    /// For blobs' searching the class supports 8 bpp indexed grayscale images and
     /// 24/32 bpp color images that are at least two pixels wide. Images that are one
     /// pixel wide can be processed if they are rotated first, or they can be processed
-    /// with <see cref="RecursiveBlobCounter"/>.
-    /// See documentation about <see cref="BlobCounterBase"/> for information about which
-    /// pixel formats are supported for extraction of blobs.</para>
-    /// 
-    /// <para>Sample usage:</para>
-    /// <code>
-    /// // create an instance of blob counter algorithm
-    /// BlobCounter bc = new BlobCounter( );
-    /// // process binary image
-    /// bc.ProcessImage( image );
-    /// Rectangle[] rects = bc.GetObjectsRectangles( );
-    /// // process blobs
-    /// foreach ( Rectangle rect in rects )
-    /// {
-    ///     // ...
-    /// }
-    /// </code>
-    /// </remarks>
-    /// 
+    /// with See documentation about  for information about which pixel formats are supported for extraction of blobs.
+    ///
     public class BlobCounter : BlobCounterBase
     {
+        /// <summary>
+        /// ±³¾°RãĞÖµ
+        /// </summary>
         private byte backgroundThresholdR = 0;
+        /// <summary>
+        /// ±³¾°GãĞÖµ
+        /// </summary>
         private byte backgroundThresholdG = 0;
+        /// <summary>
+        /// ±³¾°BãĞÖµ
+        /// </summary>
         private byte backgroundThresholdB = 0;
 
         /// <summary>
+        /// ±³¾°·§Öµ
         /// Background threshold's value.
         /// </summary>
         /// 
-        /// <remarks><para>The property sets threshold value for distinguishing between background
-        /// pixel and objects' pixels. All pixel with values less or equal to this property are
-        /// treated as background, but pixels with higher values are treated as objects' pixels.</para>
+        /// The property sets threshold value for distinguishing between background pixel and objects' pixels.
+        /// ±³¾°·§ÖµµÃÉèÖÃÊÇÎªÁËÇø·Ö±³¾°ÏñËØºÍ¶ÔÏóÏñËØ
         /// 
-        /// <para><note>In the case of colour images a pixel is treated as objects' pixel if <b>any</b> of its
-        /// RGB values are higher than corresponding values of this threshold.</note></para>
+        /// All pixel with values less or equal to this property are treated as background,
+        /// but pixels with higher values are treated as objects' pixels.
+        /// ËùÓĞÏñËØĞ¡ÓÚ»òµÈÓÚ±³¾°ÏñËØµÄµ±×ö±³¾°´¦Àí£¬ËùÓĞÏñËØ¸ÄÓë±³¾°ÏñËØµÄµ±×ö´¦Àí¶ÔÏó´¦Àí
         /// 
-        /// <para><note>For processing grayscale image, set the property with all RGB components eqaul.</note></para>
+        /// 
+        /// In the case of colour images a pixel is treated as objects' pixel if anyof its
+        /// RGB values are higher than corresponding values of this threshold.
+        /// ÔÚ²ÊÉ«Í¼ÏñµÄÇé¿öÏÂ£¬Èç¹ûÓĞÈÎºÎÏñËØ£¬Ôò½«ÆäÊÓÎª¶ÔÏóµÄÏñËØ£¬ 
+        /// RGBÖµ¸ßÓÚ´ËãĞÖµµÄÏàÓ¦Öµ¡£
+        /// 
+        /// For processing grayscale image, set the property with all RGB components eqaul.
+        /// ´¦Àí»Ò¶ÈÍ¼Æ¬Ê± ÉèÖÃËùÓĞµÄRGBÖµÏàµÈ
         ///
-        /// <para>Default value is set to <b>(0, 0, 0)</b> - black colour.</para></remarks>
-        /// 
+        /// Default value is set to <b>(0, 0, 0)</b> - black colour.
+        /// Ä¬ÈÏÉèÖÃRGB(0,0,0) ºÚÉ«ÉèÖÃ
         public Color BackgroundThreshold
         {
             get { return Color.FromArgb( backgroundThresholdR, backgroundThresholdG, backgroundThresholdB ); }
@@ -77,15 +82,8 @@ namespace AForge.Imaging
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BlobCounter"/> class.
+        /// ½¨Á¢Ò»¸öÀàµÄÊµÀı
         /// </summary>
-        /// 
-        /// <remarks>Creates new instance of the <see cref="BlobCounter"/> class with
-        /// an empty objects map. Before using methods, which provide information about blobs
-        /// or extract them, the <see cref="BlobCounterBase.ProcessImage(Bitmap)"/>,
-        /// <see cref="BlobCounterBase.ProcessImage(BitmapData)"/> or <see cref="BlobCounterBase.ProcessImage(UnmanagedImage)"/>
-        /// method should be called to collect objects map.</remarks>
-        /// 
         public BlobCounter( ) { }
 
         /// <summary>
@@ -105,25 +103,20 @@ namespace AForge.Imaging
         public BlobCounter( BitmapData imageData ) : base( imageData ) { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BlobCounter"/> class.
+        /// ½¨Á¢Ò»¸öÀàµÄÊµÀı ¸ÃÍ¼ÏñÊÇ·ÇÍĞ¹ÜµÄ
         /// </summary>
-        /// 
-        /// <param name="image">Unmanaged image to look for objects in.</param>
-        /// 
         public BlobCounter( UnmanagedImage image ) : base( image ) { }
 
         /// <summary>
+        /// Êµ¼ÊÀàÍ¼¹¹Ôì
         /// Actual objects map building.
         /// </summary>
         /// 
-        /// <param name="image">Unmanaged image to process.</param>
+        /// Unmanaged image to process.
+        /// ·ÇÍĞ¹ÜÍ¼Ïñ´¦Àí
         /// 
-        /// <remarks>The method supports 8 bpp indexed grayscale images and 24/32 bpp color images.</remarks>
-        /// 
-        /// <exception cref="UnsupportedImageFormatException">Unsupported pixel format of the source image.</exception>
-        /// <exception cref="InvalidImagePropertiesException">Cannot process images that are one pixel wide. Rotate the image
-        /// or use <see cref="RecursiveBlobCounter"/>.</exception>
-        /// 
+        /// The method supports 8 bpp indexed grayscale images and 24/32 bpp color images.
+        /// ¸Ã·½·¨Ö§³Ö8 bppË÷Òı»Ò¶ÈÍ¼ÏñºÍ24/32 bpp²ÊÉ«Í¼Ïñ¡£ 
         protected override void BuildObjectsMap( UnmanagedImage image )
         {
             int stride = image.Stride;

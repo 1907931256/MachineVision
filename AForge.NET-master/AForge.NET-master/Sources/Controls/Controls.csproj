@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AForge.Controls</RootNamespace>
     <AssemblyName>AForge.Controls</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>AForge.Controls.snk</AssemblyOriginatorKeyFile>
@@ -91,9 +91,7 @@
     <Compile Include="ColorSlider.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Histogram.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Histogram.cs" />
     <Compile Include="Joystick.cs" />
     <Compile Include="JoystickAPI.cs" />
     <Compile Include="ManipulatorControl.cs">
